@@ -10,7 +10,7 @@ int i = Convert.ToInt32(Console.ReadLine());
 float hourlyRate = 60.5f;
 decimal income = 25300.65m;
 
-//array
+//array - collection of data 
 int[] userAge = {21, 22, 23, 24, 25};
 int[] userAge2 = new int[5]; // default values are 0,0,0,0,0
 //updating an array
@@ -25,17 +25,6 @@ Array.Copy(source, dest, 3); // source is unchanged; dest returns 12,1,5,4}
 Array.Sort() // sorts an array
 Array.IndexOf(numbers, 21); // looks through the array 'numbers' and sees if 21 exists
 
-//Equals() commpares 2 strings if they are identical
-string firsString = "This is X";
-firstString.Equals("This is X"); // will return true
-
-//Split() splits a string into substrings based on an array of separators
-string[] separator = {", ", "; "};
-string names = "Peter, John; Andy, , David";
-string[] substrings = names.Split(separator, StringSplitOptions.None);
-// the result will be {"Peter", "John", "Andy", "", "David"}
-// StringSplitOptions.RemoveEmptyEntries will remove the ""
-
 // Lists are like arrays except elements can be added and removed
 List<int> userAgeList = new List<int> {11,12,13,14};
 
@@ -47,6 +36,21 @@ userAgeList.RemoveAt(3); // will remove at a specific index
 userAgeList.Contains(51); // will check if a list contains the items
 userAgeList.Clear(); // removes the whole list
 
+// strings
+string message = "Hello World";
+string newMessage = message.Substring(2, 5); // returns "llo W"
+
+//Equals() - commpares 2 strings if they are identical
+string firsString = "This is X";
+firstString.Equals("This is X"); // will return true
+
+//Split() splits a string into substrings based on an array of separators
+string[] separator = {", ", "; "};
+string names = "Peter, John; Andy, , David";
+string[] substrings = names.Split(separator, StringSplitOptions.None);
+// the result will be {"Peter", "John", "Andy", "", "David"} // the names are now individual items ina  list
+// StringSplitOptions.RemoveEmptyEntries will remove the ""
+
 // random
 Console.WriteLine("The number is {0:F3}.", 123.5678); // will return a value of 123.567
 Console.WriteLine("Deposit = {0:C}", 2125); // will return $2125.00
@@ -56,13 +60,15 @@ Console.WriteLine("Deposit = {0:C}", 2125); // will return $2125.00
 "\\" will output \
 \" will allow " to be printed 
 ++counter vs counter ++ // ++counter will increment before, counter++ will start as counter then increment afterwards
+break - exists a loop prematurely
+continue - rest of the loop after the keyword is skipped for that iteration; page 65 for example
 
 //operators
 && and
 || or
 
 // control flow statements
-if (condition)
+if (condition) // if condition is met, do the task
 {
     do Task A
 }
@@ -75,7 +81,7 @@ else
     do Task C
 }    
 
-// switch statements
+// switch statements - similar to if statement except only takes 1 value
 switch (variable)
 {
     case "A+":
@@ -90,4 +96,40 @@ switch (variable)
         break;
 }
 
-//for loops
+//for loops - executes a block of code repeatedly until test condition is no longer valid
+for (initial value; test condition; modification to value)
+{
+    // do something
+}
+// commonly used to iterate through an array or list
+int[] myNum = {1,2,3,4,5};
+for (int i = 0; i < myNum.Length; i++)
+{
+    Console.WriteLine(myNum[i]);
+}
+// foreach loop - useful for getting information from an array/list without making changes to it
+char[] message = {'h','e','l','l','o'}
+foreach (char i in message)
+    Console.Write(i); // will return "hello"
+// while loop - repeatedly executes instructions while a condition is valid; usually need to declare a counter first; will cause infinite loop if no break condition is made
+int counter = 5;
+while (counter > 0)
+{
+    Console.WriteLine("Counter = {0}", counter); // will print out Counter = 5,4,3,2,1
+    counter = counter - 1; // decrements the counter after each loop
+}
+// do while - similar to while loop except all the codes in the curly braces will be executed at least once
+int counter = 100;
+do {
+    Console.WriteLine("Counter = {0}", counter);
+    counter++;
+} while (counter < 0); // this is executed after the code in the curly braces is tested; the loop will exit because the counter will now be 101 and is not < than 0 
+ 
+// error handeling pg 66 
+
+// Classes - use pascal case; contains content such as fields, properties and methods 
+class Staff
+{
+    // fields, propertis, methods
+}
+
