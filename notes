@@ -7,6 +7,7 @@ or
 int i = Convert.ToInt32(Console.ReadLine());
 
 //initializing non-integers
+double doesn't need anythin extra because it is used by default
 float hourlyRate = 60.5f;
 decimal income = 25300.65m;
 
@@ -107,17 +108,20 @@ for (int i = 0; i < myNum.Length; i++)
 {
     Console.WriteLine(myNum[i]);
 }
+
 // foreach loop - useful for getting information from an array/list without making changes to it
 char[] message = {'h','e','l','l','o'}
 foreach (char i in message)
     Console.Write(i); // will return "hello"
+
 // while loop - repeatedly executes instructions while a condition is valid; usually need to declare a counter first; will cause infinite loop if no break condition is made
 int counter = 5;
 while (counter > 0)
 {
-    Console.WriteLine("Counter = {0}", counter); // will print out Counter = 5,4,3,2,1
-    counter = counter - 1; // decrements the counter after each loop
+    Console.WriteLine("Counter = {0}", counter); // will print out Counter = 5 the first time
+    counter = counter - 1; // decrements the counter after each loop, next loop counter = 4
 }
+
 // do while - similar to while loop except all the codes in the curly braces will be executed at least once
 int counter = 100;
 do {
@@ -135,6 +139,7 @@ class Staff
     private int hWorked;
 }
 fields - variables in a class
+
 properties - commonly used to access private fields if it's needed by other classes
 public int HoursWorked // pascal case
 {
@@ -183,8 +188,8 @@ public Staff(string fname, string lname)
 // instantiating an object - process of using the class to make an object
 in the example he writes it in the Main() method of the Program class
 ClassName objectName = new ClassName(arguments); // syntax
-int pay;
 
+int pay;
 Staff staff1 = new Staff("Peter", "G"); // staff1 is the object; calls out to the constructor
 staff1.HoursWorked = 160; // calls out to the HoursWorked properties
 pay = staff1.CalculatePay(1000, 400); // calls out to the CalculatePay method
