@@ -1,20 +1,27 @@
-// notes
-//type casting
+//type casting - convert one data type to another
 int x = (int) 20.9; // rounded down to 20, .9 gets truncated
+or
+string x = "32";
+int i = Convert.ToInt32(x); // use convert when casting with not similar data types
+or
+int i = Convert.ToInt32(Console.ReadLine());
+
+//initializing non-integers
+float hourlyRate = 60.5f;
+decimal income = 25300.65m;
 
 //array
 int[] userAge = {21, 22, 23, 24, 25};
 int[] userAge2 = new int[5]; // default values are 0,0,0,0,0
 //updating an array
-userAge[0] = 30; // will change the array to 30,22,23,24,25}
+userAge[0] = 30; // will change the array to {30,22,23,24,25}
 //can also do math operations while updating array
 userAge[0] = userAge[0] + 2  // returns 32 as index 0
-userAge.length // returns 5
+userAge.Length // returns 5
 //copy()
 int[] source = {12,1,5,-2,16,14};
 int[] dest = {1,2,3,4};
 Array.Copy(source, dest, 3); // source is unchanged; dest returns 12,1,5,4}
-
 Array.Sort() // sorts an array
 Array.IndexOf(numbers, 21); // looks through the array 'numbers' and sees if 21 exists
 
@@ -41,18 +48,14 @@ userAgeList.Contains(51); // will check if a list contains the items
 userAgeList.Clear(); // removes the whole list
 
 // random
-Console.WriteLine("The number is {0:F3}.", 123.5678); // will return a value of 123.5678
+Console.WriteLine("The number is {0:F3}.", 123.5678); // will return a value of 123.567
 Console.WriteLine("Deposit = {0:C}", 2125); // will return $2125.00
-//escape sequences
+// escape sequences
 \t will print the tab
 \n will start a new line
 "\\" will output \
 \" will allow " to be printed 
-
-//converting string to number
-int newUserInput = Convert.ToInt32(userInput); // converts string to int
-or if getting an input from a user:
-userAge = Convert.ToInt32(Console.ReadLine());
+++counter vs counter ++ // ++counter will increment before, counter++ will start as counter then increment afterwards
 
 //operators
 && and
