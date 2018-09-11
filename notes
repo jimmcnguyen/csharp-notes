@@ -130,6 +130,64 @@ do {
 // Classes - use pascal case; contains content such as fields, properties and methods 
 class Staff
 {
-    // fields, propertis, methods
+    private string nameOfStaff;
+    private const int hourlyRate = 30;
+    private int hWorked;
+}
+fields - variables in a class
+properties - commonly used to access private fields if it's needed by other classes
+public int HoursWorked // pascal case
+{
+    get
+    {
+        return hWorked; // pulls from the private field above
+     }
+     set
+     {
+        if (value > 0) // value is a keyword that is linked to the private field (hWorked)
+            hWorked = value;
+        else
+            hWorked = 0;
+       }
+}       
+
+// methods - similar to functions in that they perform a task
+example 1
+public void PrintMessage() // void = does not return a result
+{
+    Console.Write("Calculating pay...");
+}
+example 2
+public int CalculatePay(int bonus, int allowance) // 2 arguments
+{
+    PrintMessage(); // calls the previous method
+    
+    int staffPay = hWorked * hourlyRate + bonus + allowance; // staffPay is a local variable and only exists within this method
+    
+    if (hWorked > 0)
+        return staffPay;
+    else
+        return 0;
+}  
+
+// constructors - a method that is used to create an object from the class template; commonly used to initliaze the fields of a class; it is the fist method that is called when creating an object
+// constructors always have the same name as the class; do not need to put void
+example
+public Staff(string fname, string lname)
+{
+    nameOfStaff = fname + " " + lname;
+    Console.WriteLine("\n" + nameOfStaff);
+    Console.WriteLine("-----------------");
 }
 
+// instantiating an object - process of using the class to make an object
+in the example he writes it in the Main() method of the Program class
+ClassName objectName = new ClassName(arguments); // syntax
+int pay;
+
+Staff staff1 = new Staff("Peter", "G"); // staff1 is the object; calls out to the constructor
+staff1.HoursWorked = 160; // calls out to the HoursWorked properties
+pay = staff1.CalculatePay(1000, 400); // calls out to the CalculatePay method
+console.WriteLine("Pay = {0}", pay);
+
+// static keywords
