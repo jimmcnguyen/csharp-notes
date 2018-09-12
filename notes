@@ -71,6 +71,8 @@ continue - rest of the loop after the keyword is skipped for that iteration; pag
 // assignment operators
 a += 3; same as a = a + 3 // same goes for -, *, /
 // logical operators will always return boolean
+value types - aka anything that's not an array or list; changes only apply within the method pg 93
+refrence types - aka lists and arrays; changes made will reflect everywhere
 
 //operators
 && and
