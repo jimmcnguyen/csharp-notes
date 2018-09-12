@@ -7,7 +7,7 @@ or
 int i = Convert.ToInt32(Console.ReadLine());
 
 //initializing non-integers
-double doesn't need anythin extra because it is used by default
+int and double doesn't need anything extra because it is used by default
 float hourlyRate = 60.5f;
 decimal income = 25300.65m;
 
@@ -96,6 +96,9 @@ public class MainClass
     }
 }
 https://stackoverflow.com/questions/5096926/what-is-the-get-set-syntax-in-c
+// static keywords - allows classes to be accessed without creating an object pg 86
+- derived classes also known as child classes; classes they are derived from are called parent classes
+- polymorphism
 
 //operators
 && and
@@ -229,4 +232,4 @@ staff1.HoursWorked = 160; // calls out to the HoursWorked properties
 pay = staff1.CalculatePay(1000, 400); // calls out to the CalculatePay method
 console.WriteLine("Pay = {0}", pay);
 
-// static keywords
+
