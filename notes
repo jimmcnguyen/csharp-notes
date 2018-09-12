@@ -61,12 +61,21 @@ Console.WriteLine("Deposit = {0:C}", 2125); // will return $2125.00
 "\\" will output \
 \" will allow " to be printed 
 ++counter vs counter ++ // ++counter will increment before, counter++ will start as counter then increment afterwards
+example:
+int a = 1;
+int b = a++; // a = 2 and b = 1
+int a = 1;
+int b = ++a; // a = 2 and b = 2
 break - exists a loop prematurely
 continue - rest of the loop after the keyword is skipped for that iteration; page 65 for example
+// assignment operators
+a += 3; same as a = a + 3 // same goes for -, *, /
+// logical operators will always return boolean
 
 //operators
 && and
 || or
+! not
 
 // control flow statements
 if (condition) // if condition is met, do the task
