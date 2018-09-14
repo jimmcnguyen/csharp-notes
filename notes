@@ -53,6 +53,8 @@ string[] substrings = names.Split(separator, StringSplitOptions.None);
 // StringSplitOptions.RemoveEmptyEntries will remove the ""
 
 // random
+Convert.ToInt32() vs Int32.Pase():
+use Int32.Parse() if the expected string will ALWAYS be an integer (can only convert strings)
 Console.WriteLine("The number is {0:F3}.", 123.5678); // will return a value of 123.567
 Console.WriteLine("Deposit = {0:C}", 2125); // will return $2125.00
 // escape sequences
@@ -134,7 +136,7 @@ switch (variable)
         break;
 }
 
-//for loops - executes a block of code repeatedly until test condition is no longer valid
+//for loops - executes a block of code repeatedly until test condition is no longer valid; similar to while loops in that they both have a counter
 for (initial value; test condition; modification to value)
 {
     // do something
