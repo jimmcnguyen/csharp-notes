@@ -25,8 +25,6 @@ int[] dest = {1,2,3,4};
 Array.Copy(source, dest, 3); // source is unchanged; dest returns 12,1,5,4}
 Array.Sort() // sorts an array
 Array.IndexOf(numbers, 21); // looks through the array 'numbers' and sees if 21 exists
-//are immutable; once defined it cannot be expanded or shrunk
-Array.Reverse(); reverses
 
 // Lists are like arrays except elements can be added and removed
 List<int> userAgeList = new List<int> {11,12,13,14};
@@ -39,21 +37,11 @@ userAgeList.RemoveAt(3); // will remove at a specific index
 userAgeList.Contains(51); // will check if a list contains the items
 userAgeList.Clear(); // removes the whole list
 
-// datetime
-DateTime myValue = DateTime.Now(); // sets myValue to the current date and time
-Console.WriteLine(myValue.ToShortDateString()); // returns just the date, not time; 
-
-DateTime myBirthday = new DateTime(1969, 12, 7);
-Console.WriteLine(myBirthday.ToShortDateSTring()); // will return 12/7/1969
-
 // strings
-string message = string.Format("{0}, 123);
 string message = "Hello World";
 string newMessage = message.Substring(2, 5); // returns "llo W"
-value.ToUpper();
-value.Replace("what i want to replace ", "what i'm replacing it with ");
 
-//Equals() - compares 2 strings if they are identical
+//Equals() - commpares 2 strings if they are identical
 string firsString = "This is X";
 firstString.Equals("This is X"); // will return true
 
@@ -61,20 +49,15 @@ firstString.Equals("This is X"); // will return true
 string[] separator = {", ", "; "};
 string names = "Peter, John; Andy, , David";
 string[] substrings = names.Split(separator, StringSplitOptions.None);
-// the result will be {"Peter", "John", "Andy", "", "David"} // the names are now individual items in a  list
+// the result will be {"Peter", "John", "Andy", "", "David"} // the names are now individual items ina  list
 // StringSplitOptions.RemoveEmptyEntries will remove the ""
 
 // random
-this. i think implies that something belongs within the class
-string.Format()
-void means it will return nothing
-always include Console.ReadLine(); at the end
-Convert.ToInt32() vs Int32.Pase():
+variable.ToString() converts to string
+Convert.ToInt32() vs Int32.Parse():
 use Int32.Parse() if the expected string will ALWAYS be an integer (can only convert strings)
 Console.WriteLine("The number is {0:F3}.", 123.5678); // will return a value of 123.567
 Console.WriteLine("Deposit = {0:C}", 2125); // will return $2125.00
-Console.WriteLine("{0:N}",123566); will return 123,566.00
-Console.WriteLine("{0:P}", .123); will return 12.3%
 // escape sequences
 \t will print the tab
 \n will start a new line
@@ -169,9 +152,7 @@ for (int i = 0; i < myNum.Length; i++)
 // foreach loop - useful for getting information from an array/list without making changes to it
 char[] message = {'h','e','l','l','o'}
 foreach (char i in message)
-{
     Console.Write(i); // will return "hello"
-}    
 
 // while loop - repeatedly executes instructions while a condition is valid; usually need to declare a counter first; will cause infinite loop if no break condition is made
 int counter = 5;
@@ -190,7 +171,7 @@ do {
  
 // error handeling pg 66 
 
-// Classes - use pascal case; contains content such as fields, properties and methods; think of it has a blueprint for the object 
+// Classes - use pascal case; contains content such as fields, properties and methods 
 class Staff
 {
     private string nameOfStaff;
@@ -199,7 +180,7 @@ class Staff
 }
 fields - variables in a class
 
-properties - commonly used to access private fields if it's needed by other classes; shorcut is prop tab tab
+properties - commonly used to access private fields if it's needed by other classes
 public int HoursWorked // pascal case
 {
     get
@@ -253,18 +234,5 @@ Staff staff1 = new Staff("Peter", "G"); // staff1 is the object; calls out to th
 staff1.HoursWorked = 160; // calls out to the HoursWorked properties
 pay = staff1.CalculatePay(1000, 400); // calls out to the CalculatePay method
 console.WriteLine("Pay = {0}", pay);
-
-// reading a txt file - ** need to add Using System.IO; ** values.txt will need to be created in the bin folder (copy always)
-            StreamReader myReader = new StreamReader("values.txt"); // reads every line of the txt file
-            string line = "";
-
-            while (line != null) // will continue to read the txt file until there's nothing else
-            {
-                line = myReader.ReadLine();
-                if (line != null)
-                    Console.WriteLine(line);
-            }
-            myReader.Close(); // must have
-            Console.ReadLine();
 
 
